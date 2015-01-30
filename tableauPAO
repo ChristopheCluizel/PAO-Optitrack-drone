@@ -1,0 +1,5 @@
+repère en haut à gauche.
+Taille image : 1280x1024
+roundness = rotondité des objets détectés
+proche de 1 = très rond
+proche de 0 = pas rond
