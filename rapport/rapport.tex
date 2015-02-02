@@ -1,0 +1,103 @@
+\documentclass{scrreprt}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[francais]{babel, varioref}
+\usepackage{graphicx}
+\usepackage{listings}
+
+\usepackage{xspace}
+\usepackage{amssymb}
+\usepackage{calc}
+\usepackage{listingsutf8}
+\usepackage{color}
+\usepackage{xcolor}
+
+%%%%%%%%%%%%%%%%%%%%%
+\usepackage{url}
+\usepackage[top=2.1cm,bottom=2.2cm,left=2cm,right=2cm]{geometry}
+\usepackage[final]{pdfpages}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%% Pour sommaire cliquable %%%%%%%%%%
+\usepackage{hyperref} % Créer des liens et des signets
+\hypersetup{
+colorlinks=true, %colorise les liens
+breaklinks=true, %permet le retour à la ligne dans les liens trop longs
+urlcolor= blue, %couleur des hyperliens
+linkcolor= black, %couleur des liens internes
+citecolor=black,  %couleur des références
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\newcommand\TODO[1]{\textcolor{red}{\textbf{#1}}}
+
+%pour la coloration du code
+
+\definecolor{colFond}{rgb}{0.8,0.9,0.9}
+\definecolor{hellgelb}{rgb}{1,1,0.8}
+\definecolor{colKeys}{rgb}{0,0,1}
+\definecolor{colIdentifier}{rgb}{0,0,0}
+\definecolor{colComments}{rgb}{0,0.5,0}
+\definecolor{colString}{rgb}{0.62,0.12,0.94}
+
+\lstset{
+  language=c++,
+  float=hbp,
+  basicstyle=\ttfamily\small,
+  identifierstyle=\color{colIdentifier},
+  keywordstyle=\bf \color{colKeys},
+  stringstyle=\color{colString},
+  commentstyle=\color{colComments},
+  columns=flexible,
+  tabsize=3,
+  frame=single,
+  frame=shadowbox,
+  rulesepcolor=\color[gray]{0.5},
+  extendedchars=true,
+  showspaces=false,
+  showstringspaces=false,
+  numbers=left,
+  firstnumber=1,
+  numberstyle=\tiny,
+  breaklines=true,
+  backgroundcolor=\color{hellgelb},
+  captionpos=b,
+}
+
+\usepackage{templateINSA}
+\initINSA
+
+\title{PAO Optitrack-drone}
+
+\author{Alexandre \bsc{Brehmer}\\ Christophe \bsc{Cluizel}}
+\renewcommand\soustitre{Rapport de projet}
+\renewcommand\infoBig{Projet d'Approfondissement et d'Ouverture}
+\renewcommand\infoSmall{ASI4 2014-2015}
+
+\begin{document}
+ \titleINSA{15}{images/page_couverture.png}{0}{-30}{225}{\url{http://www.lexus-int.com/amazinginmotion/}{\textcolor{white}{}}}
+
+\tableofcontents
+
+\include{1.introduction}
+\newpage
+\include{2.presentation_robot}
+\newpage
+\include{3.objectif_pao}
+\newpage
+\include{4.calendrier}
+\newpage
+\include{5.suivi_de_projet}
+\newpage
+\include{6.tutoriel}
+\newpage
+\include{7.realisation_logicielle}
+\newpage
+\include{8.perspective}
+\newpage
+\include{9.conclusion}
+
+
+\end{document}
