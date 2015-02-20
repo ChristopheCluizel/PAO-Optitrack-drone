@@ -22,17 +22,7 @@ ClientOptiTrack::~ClientOptiTrack(void)
 // Establish a NatNet Client connection
 int ClientOptiTrack::CreateClient(int iConnectionType)
 {
-    // release previous server
-   /* if(theClient)
-    {
-        theClient->Uninitialize();
-    }*/
-
-    // create NatNet client
     this->theClient = new NatNetClient(iConnectionType);
-
-    // [optional] use old multicast group
-    //theClient->SetMulticastAddress("224.0.0.1");
 
     // print version info
     unsigned char ver[4];
@@ -82,10 +72,10 @@ int ClientOptiTrack::CreateClient(int iConnectionType)
 // DataHandler receives data from the server
 void __cdecl ClientOptiTrack::DataHandler(sFrameOfMocapData* data, void* pUserData)
 {
-	NatNetClient* pClient = (NatNetClient*) pUserData;
+	/*NatNetClient* pClient = (NatNetClient*) pUserData;
 
-	/*if(fp)
-		_WriteFrame(fp,data);*/
+	//if(fp)
+		//_WriteFrame(fp,data);
 	
     int i=0;
 
@@ -119,11 +109,11 @@ void __cdecl ClientOptiTrack::DataHandler(sFrameOfMocapData* data, void* pUserDa
 			data->OtherMarkers[i][0],
 			data->OtherMarkers[i][1],
 			data->OtherMarkers[i][2]);
-	}
+	}*/
 
 	// Rigid Bodies
 	printf("Rigid Bodies [Count=%d]\n", data->nRigidBodies);
-	for(i=0; i < data->nRigidBodies; i++)
+	for(int i=0; i < data->nRigidBodies; i++)
 	{
         // params
         // 0x01 : bool, rigid body was successfully tracked in this frame
@@ -140,7 +130,7 @@ void __cdecl ClientOptiTrack::DataHandler(sFrameOfMocapData* data, void* pUserDa
 			data->RigidBodies[i].qz,
 			data->RigidBodies[i].qw);
 
-		printf("\tRigid body markers [Count=%d]\n", data->RigidBodies[i].nMarkers);
+		/*printf("\tRigid body markers [Count=%d]\n", data->RigidBodies[i].nMarkers);
 		for(int iMarker=0; iMarker < data->RigidBodies[i].nMarkers; iMarker++)
 		{
             printf("\t\t");
@@ -153,10 +143,10 @@ void __cdecl ClientOptiTrack::DataHandler(sFrameOfMocapData* data, void* pUserDa
                     data->RigidBodies[i].Markers[iMarker][0],
                     data->RigidBodies[i].Markers[iMarker][1],
                     data->RigidBodies[i].Markers[iMarker][2]);
-        }
+        }*/
 	}
 
-	// skeletons
+	/*// skeletons
 	printf("Skeletons [Count=%d]\n", data->nSkeletons);
 	for(i=0; i < data->nSkeletons; i++)
 	{
@@ -183,9 +173,9 @@ void __cdecl ClientOptiTrack::DataHandler(sFrameOfMocapData* data, void* pUserDa
 					data->RigidBodies[i].Markers[iMarker][2]);
 			}
 		}
-	}
+	}*/
 
-	// labeled markers
+	/*// labeled markers
     bool bOccluded;     // marker was not visible (occluded) in this frame
     bool bPCSolved;     // reported position provided by point cloud solve
     bool bModelSolved;  // reported position provided by model solve
@@ -198,7 +188,7 @@ void __cdecl ClientOptiTrack::DataHandler(sFrameOfMocapData* data, void* pUserDa
 		sMarker marker = data->LabeledMarkers[i];
 		printf("Labeled Marker [ID=%d, Occluded=%d, PCSolved=%d, ModelSolved=%d] [size=%3.2f] [pos=%3.2f,%3.2f,%3.2f]\n",
             marker.ID, bOccluded, bPCSolved, bModelSolved,  marker.size, marker.x, marker.y, marker.z);
-	}
+	}*/
 
 }
 
