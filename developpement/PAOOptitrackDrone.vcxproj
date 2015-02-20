@@ -39,9 +39,9 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\Users\asi\Desktop\PAOCluizelBrehmer\developpement\include\optitrack;C:\Users\asi\Desktop\PAOCluizelBrehmer\developpement\include\ardrone;C:\Users\asi\Desktop\PAOCluizelBrehmer\developpement\include;$(IncludePath)</IncludePath>
+    <IncludePath>include\optitrack;include\ardrone;include;$(IncludePath)</IncludePath>
     <OutDir>$(SolutionDir)bin</OutDir>
-    <SourcePath>C:\Users\asi\Desktop\PAOCluizelBrehmer\developpement\src\optitrack;C:\Users\asi\Desktop\PAOCluizelBrehmer\developpement\src\ardrone;C:\Users\asi\Desktop\PAOCluizelBrehmer\developpement\src;$(SourcePath)</SourcePath>
+    <SourcePath>src\optitrack;src\ardrone;src;$(SourcePath)</SourcePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
