@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "ardrone/ARdrone.h"
+#include "ARdrone.h"
 
 
 ARdrone::ARdrone(void) : sender(NULL)//, navData(NULL)

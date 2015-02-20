@@ -39,9 +39,9 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(SolutionDir)include;$(IncludePath)</IncludePath>
+    <IncludePath>C:\Users\asi\Desktop\PAOCluizelBrehmer\developpement\include\optitrack;C:\Users\asi\Desktop\PAOCluizelBrehmer\developpement\include\ardrone;C:\Users\asi\Desktop\PAOCluizelBrehmer\developpement\include;$(IncludePath)</IncludePath>
     <OutDir>$(SolutionDir)bin</OutDir>
-    <SourcePath>$(SolutionDir)src;$(SourcePath)</SourcePath>
+    <SourcePath>C:\Users\asi\Desktop\PAOCluizelBrehmer\developpement\src\optitrack;C:\Users\asi\Desktop\PAOCluizelBrehmer\developpement\src\ardrone;C:\Users\asi\Desktop\PAOCluizelBrehmer\developpement\src;$(SourcePath)</SourcePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -56,6 +56,8 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>NatNetLibStatic.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -78,14 +80,20 @@
     <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\ardrone\ARdrone.h" />
-    <ClInclude Include="include\stdafx.h" />
-    <ClInclude Include="include\targetver.h" />
+    <ClCompile Include="src\ardrone\ARdrone.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\optitrack\ClientOptiTrack.cpp" />
+    <ClCompile Include="src\stdafx.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\ardrone\ARdrone.cpp" />
-    <ClCompile Include="src\PAOOptitrackDrone.cpp" />
-    <ClCompile Include="src\stdafx.cpp" />
+    <ClInclude Include="include\ardrone\ARdrone.h" />
+    <ClInclude Include="include\optitrack\ClientOptiTrack.h" />
+    <ClInclude Include="include\optitrack\NatNetClient.h" />
+    <ClInclude Include="include\optitrack\NatNetRepeater.h" />
+    <ClInclude Include="include\optitrack\NatNetServer.h" />
+    <ClInclude Include="include\optitrack\NatNetTypes.h" />
+    <ClInclude Include="include\stdafx.h" />
+    <ClInclude Include="include\targetver.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
