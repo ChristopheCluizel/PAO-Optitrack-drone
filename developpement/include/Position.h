@@ -17,6 +17,11 @@ public:
 	void setRoll(float x);
 
 private:
-	float m_x, m_y, m_z, m_yaw, m_pitch, m_roll;
+	float m_x;
+	float m_y;
+	float m_z;
+	float m_yaw;
+	float m_pitch;
+	float m_roll;
 };
 

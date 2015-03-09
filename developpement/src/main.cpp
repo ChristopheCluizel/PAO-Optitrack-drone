@@ -23,7 +23,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	int resultat = client->CreateClient(ConnectionType_Multicast);
 	if(resultat != ErrorCode_OK)
     {
-        printf("Error initializing client.  See log for details.  Exiting");
+        printf("Error initializing client. See log for details. Exiting");
 		Sleep(20000);
         return 0;
     }
@@ -34,7 +34,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	Sleep(3000);
 	RigidBody drone = client->getRigidBody(1);
 	printf("x:%f",drone.x);
-	
+
 	Sleep(3000);
 
 	return 0;

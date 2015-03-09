@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
-#include "include\optitrack\ClientOptiTrack.h"
+
+#include "ClientOptiTrack.h"
 #include "Position.h"
 
 class Robot
@@ -13,7 +14,4 @@ protected:
 	std::string m_nom;
 	Position m_position;
 	int m_id;
-
-
 };
-

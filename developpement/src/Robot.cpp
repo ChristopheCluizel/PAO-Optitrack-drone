@@ -1,8 +1,9 @@
 #include "StdAfx.h"
 #include "Robot.h"
 
+using namespace std;
 
-Robot::Robot(std::string nom, int id) : m_nom(nom),m_id(id), m_position(0,0,0,0,0,0)
+Robot::Robot(string nom, int id) : m_nom(nom), m_id(id), m_position(0,0,0,0,0,0)
 {
 }
 
