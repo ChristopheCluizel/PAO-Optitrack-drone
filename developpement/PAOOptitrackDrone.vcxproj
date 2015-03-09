@@ -80,6 +80,9 @@
     <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Position.cpp" />
+    <ClCompile Include="Quadricoptere.cpp" />
+    <ClCompile Include="Robot.cpp" />
     <ClCompile Include="src\ardrone\ARdrone.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\optitrack\ClientOptiTrack.cpp" />
@@ -94,6 +97,9 @@
     <ClInclude Include="include\optitrack\NatNetTypes.h" />
     <ClInclude Include="include\stdafx.h" />
     <ClInclude Include="include\targetver.h" />
+    <ClInclude Include="Position.h" />
+    <ClInclude Include="Quadricoptere.h" />
+    <ClInclude Include="Robot.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

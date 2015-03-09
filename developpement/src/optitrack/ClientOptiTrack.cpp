@@ -2,11 +2,12 @@
 #include "ClientOptiTrack.h"
 
 
+RigidBody ClientOptiTrack::rigidBodies[10];
+
 ClientOptiTrack::ClientOptiTrack(void)
 	: MyServersDataPort(3130)
 	, MyServersCommandPort(3131)
 {
-	
 	szMyIPAddress = new char[128];
 	szServerIPAddress = new char[128];
 	sprintf(szServerIPAddress,"");
@@ -16,6 +17,16 @@ ClientOptiTrack::ClientOptiTrack(void)
 
 ClientOptiTrack::~ClientOptiTrack(void)
 {
+}
+
+RigidBody ClientOptiTrack::getRigidBody(int id)
+{
+	for(int i=0; i < 10; i++)
+	{
+		if( rigidBodies[i].ID == id)
+			return rigidBodies[i];
+	}
+	return RigidBody();
 }
 
 
@@ -72,6 +83,7 @@ int ClientOptiTrack::CreateClient(int iConnectionType)
 // DataHandler receives data from the server
 void __cdecl ClientOptiTrack::DataHandler(sFrameOfMocapData* data, void* pUserData)
 {
+	//datas = data;
 	/*NatNetClient* pClient = (NatNetClient*) pUserData;
 
 	//if(fp)
@@ -112,12 +124,22 @@ void __cdecl ClientOptiTrack::DataHandler(sFrameOfMocapData* data, void* pUserDa
 	}*/
 
 	// Rigid Bodies
-	printf("Rigid Bodies [Count=%d]\n", data->nRigidBodies);
+	//printf("Rigid Bodies [Count=%d]\n", data->nRigidBodies);
 	for(int i=0; i < data->nRigidBodies; i++)
 	{
+			ClientOptiTrack::rigidBodies[i].ID =data->RigidBodies[i].ID;
+			ClientOptiTrack::rigidBodies[i].x =data->RigidBodies[i].x;
+			ClientOptiTrack::rigidBodies[i].y =data->RigidBodies[i].y;
+			ClientOptiTrack::rigidBodies[i].z =data->RigidBodies[i].z;
+			ClientOptiTrack::rigidBodies[i].qx =data->RigidBodies[i].qx;
+			ClientOptiTrack::rigidBodies[i].qy =data->RigidBodies[i].qy;
+			ClientOptiTrack::rigidBodies[i].qz =data->RigidBodies[i].qz;
+			ClientOptiTrack::rigidBodies[i].qw =data->RigidBodies[i].qw;
+			ClientOptiTrack::rigidBodies[i].nMarkers =data->RigidBodies[i].nMarkers;
+		//rigidBodies[i] = data->RigidBodies[i];
         // params
         // 0x01 : bool, rigid body was successfully tracked in this frame
-        bool bTrackingValid = data->RigidBodies[i].params & 0x01;
+       /* bool bTrackingValid = data->RigidBodies[i].params & 0x01;
 
 		printf("Rigid Body [ID=%d  Error=%3.2f  Valid=%d]\n", data->RigidBodies[i].ID, data->RigidBodies[i].MeanError, bTrackingValid);
 		printf("\tx\ty\tz\tqx\tqy\tqz\tqw\n");
@@ -128,7 +150,7 @@ void __cdecl ClientOptiTrack::DataHandler(sFrameOfMocapData* data, void* pUserDa
 			data->RigidBodies[i].qx,
 			data->RigidBodies[i].qy,
 			data->RigidBodies[i].qz,
-			data->RigidBodies[i].qw);
+			data->RigidBodies[i].qw);*/
 
 		/*printf("\tRigid body markers [Count=%d]\n", data->RigidBodies[i].nMarkers);
 		for(int iMarker=0; iMarker < data->RigidBodies[i].nMarkers; iMarker++)
@@ -195,7 +217,7 @@ void __cdecl ClientOptiTrack::DataHandler(sFrameOfMocapData* data, void* pUserDa
 // MessageHandler receives NatNet error/debug messages
  void __cdecl ClientOptiTrack::MessageHandler(int msgType, char* msg)
 {
-	printf("\n%s\n", msg);
+	//printf("\n%s\n", msg);
 }
 
 /* File writing routines */

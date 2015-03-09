@@ -24,14 +24,19 @@ int _tmain(int argc, _TCHAR* argv[])
 	if(resultat != ErrorCode_OK)
     {
         printf("Error initializing client.  See log for details.  Exiting");
-		Sleep(2000000);
+		Sleep(20000);
         return 0;
     }
     else
     {
         printf("Client initialized and ready.\n");
     }
-	Sleep(2000000);
+	Sleep(3000);
+	RigidBody drone = client->getRigidBody(1);
+	printf("x:%f",drone.x);
+	
+	Sleep(3000);
+
 	return 0;
 }
 
