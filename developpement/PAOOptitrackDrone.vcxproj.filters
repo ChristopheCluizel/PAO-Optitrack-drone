@@ -30,13 +30,13 @@
     <ClCompile Include="src\optitrack\ClientOptiTrack.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Robot.cpp">
+    <ClCompile Include="src\Position.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Quadricoptere.cpp">
+    <ClCompile Include="src\Quadricoptere.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Position.cpp">
+    <ClCompile Include="src\Robot.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -65,13 +65,13 @@
     <ClInclude Include="include\optitrack\NatNetTypes.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Robot.h">
+    <ClInclude Include="include\Position.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Quadricoptere.h">
+    <ClInclude Include="include\Quadricoptere.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Position.h">
+    <ClInclude Include="include\Robot.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
