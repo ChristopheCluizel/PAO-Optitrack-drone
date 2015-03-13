@@ -35,6 +35,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	signal(SIGINT,my_handler);// gestion de l'arret d'urgence
 	
 	ClientOptiTrack *client = new ClientOptiTrack();
+	client->szServerIPAddress = "192.168.1.2";
 	int resultat = client->CreateClient(ConnectionType_Multicast);
 	if(resultat != ErrorCode_OK)
     {
@@ -47,12 +48,12 @@ int _tmain(int argc, _TCHAR* argv[])
         printf("Client initialized and ready.\n");
     }
 
-	/*drone = new ARdrone();
+	drone = new ARdrone();
 	drone->connect();
 	drone->config();
-	//drone->clearEmergencySignal();
+	drone->clearEmergencySignal();
 	drone->flatTrim();
-	drone->takeOff();*/
+	drone->takeOff();
 	
 	
 	/*Sleep(6000);
@@ -65,15 +66,18 @@ int _tmain(int argc, _TCHAR* argv[])
 
 	while(1)
 	{
-
+		float tangage = client->getRigidBody(2).qx;
+		float roulis = client->getRigidBody(2).qz;
+		cout << tangage << ", " << roulis<< endl;
+		if(tangage >-0.5 && tangage<0.5 &&
+			roulis >-0.5 && roulis<0.5)
+		{
+			drone->move(roulis,-tangage,0,0);
+		}
+		Sleep(30);
 	}
 	
-	Sleep(3000);
-	cout << client->getRigidBody(1).x << endl;
-	Sleep(3000);
-	cout << client->getRigidBody(1).x << endl;
-
-	Sleep(3000);
+	
 
 	return 0;
 }
