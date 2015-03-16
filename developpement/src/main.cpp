@@ -35,7 +35,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	signal(SIGINT,my_handler);// gestion de l'arret d'urgence
 	
 	ClientOptiTrack *client = new ClientOptiTrack();
-	client->szServerIPAddress = "192.168.1.2";
+	client->szServerIPAddress = "192.168.1.3";
 	int resultat = client->CreateClient(ConnectionType_Multicast);
 	if(resultat != ErrorCode_OK)
     {
@@ -105,9 +105,15 @@ int _tmain(int argc, _TCHAR* argv[])
 		float consigneQY = (objectifQY-droneQY)*QYcoef;
 		cout << objectifQY << " - " << droneQY << " = " << consigneQY << endl;
 
-
-		drone->move(consigneX,consigneZ,consigneY,consigneQY);
-		//drone->move(0,0,0,consigneQY);
+		if(consigneX > -1 && consigneX < 1
+			&& consigneY > -1 && consigneY < 1
+			&& consigneZ > -1 && consigneZ < 1
+			&& consigneQY > -1 && consigneQY < 1) 
+		{
+			drone->move(consigneX,consigneZ,consigneY,consigneQY);
+			//drone->move(0,0,0,consigneQY);
+			Sleep(30);
+		}
 		Sleep(30);
 	}
 	
