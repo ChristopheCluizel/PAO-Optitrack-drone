@@ -51,8 +51,13 @@ int _tmain(int argc, _TCHAR* argv[])
 	drone = new ARdrone();
 	drone->connect();
 	drone->config();
-	drone->clearEmergencySignal();
+	printf("ClearEmergency [y/n]");
+	char c='a';
+	scanf("%c",&c);
+	if(c=='y')
+		drone->clearEmergencySignal();
 	drone->flatTrim();
+	Sleep(200);
 	drone->takeOff();
 	
 	
@@ -66,7 +71,8 @@ int _tmain(int argc, _TCHAR* argv[])
 
 	while(1)
 	{
-		float tangage = client->getRigidBody(2).qx;
+		//controle avec coque
+		/*float tangage = client->getRigidBody(2).qx;
 		float roulis = client->getRigidBody(2).qz;
 		cout << tangage << ", " << roulis<< endl;
 		if(tangage >-0.5 && tangage<0.5 &&
@@ -74,6 +80,34 @@ int _tmain(int argc, _TCHAR* argv[])
 		{
 			drone->move(roulis,-tangage,0,0);
 		}
+		Sleep(30);*/
+		float Ycoef = 0.0004; // Y proportionnal coef
+		float objectifY = client->getRigidBody(2).y * 1000;//convert to millimeters
+		float droneY= client->getRigidBody(1).y * 1000;
+		float consigneY = (objectifY-droneY)*Ycoef;
+
+		float Xcoef = -0.00005; // X proportionnal coef
+		float objectifX = client->getRigidBody(2).x * 1000;//convert to millimeters
+		float droneX= client->getRigidBody(1).x * 1000;
+		float consigneX = (objectifX-droneX)*Xcoef;
+		//cout << objectifX << " - " << droneX << " = " << consigneX << endl;
+
+		float Zoffset = 2000;
+		float Zcoef = -0.00005; // Z proportionnal coef
+		float objectifZ = client->getRigidBody(2).z * 1000 - Zoffset;//convert to millimeters
+		float droneZ= client->getRigidBody(1).z * 1000;
+		float consigneZ = (objectifZ-droneZ)*Zcoef;
+		//cout << objectifZ << " - " << droneZ << " = " << consigneZ << endl;
+
+		float QYcoef = -0.0006; // QY proportionnal coef
+		float objectifQY = client->getRigidBody(2).qy * 1000;//convert to millimeters
+		float droneQY = client->getRigidBody(1).qy * 1000;
+		float consigneQY = (objectifQY-droneQY)*QYcoef;
+		cout << objectifQY << " - " << droneQY << " = " << consigneQY << endl;
+
+
+		drone->move(consigneX,consigneZ,consigneY,consigneQY);
+		//drone->move(0,0,0,consigneQY);
 		Sleep(30);
 	}
 	

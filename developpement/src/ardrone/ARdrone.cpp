@@ -124,7 +124,7 @@ void ARdrone::senderThread()
 			strcpy_s(msg,cmd.length()+1,cmd.c_str());
 			if(sendto(s, msg, strlen(msg) , 0 , (struct sockaddr *) &si_other, slen)==SOCKET_ERROR)
 				printf("sendto() failed with error code : %d" , WSAGetLastError());
-			cout << cmd << endl;
+			//cout << cmd << endl;
 		}
 		else if(state == VOL)
 		{
