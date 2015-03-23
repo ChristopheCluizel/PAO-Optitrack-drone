@@ -6,24 +6,24 @@
 
 
 #include "stdafx.h"
-#include "ARdrone.h"
 #include "ClientOptitrack.h"
+#include "Quadricoptere.h"
 
 using namespace std;
 
-ARdrone* drone;
+Quadricoptere* quadri;
 bool urgence = 0;
 
 void my_handler(int s){
 		if(urgence)
 		{
            printf("Arret D'urgence\n");
-		   drone->clearEmergencySignal();
+		   quadri->emergency();
 		}
 		else
 		{
             printf("Atterissage\n");
-			drone->land();
+			quadri->land();
 			urgence=1;
 			signal(SIGINT,my_handler);
 		}
@@ -35,7 +35,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	signal(SIGINT,my_handler);// gestion de l'arret d'urgence
 	
 	ClientOptiTrack *client = new ClientOptiTrack();
-	client->szServerIPAddress = "192.168.1.3";
+	client->szServerIPAddress = "192.168.1.2";
 	int resultat = client->CreateClient(ConnectionType_Multicast);
 	if(resultat != ErrorCode_OK)
     {
@@ -48,29 +48,33 @@ int _tmain(int argc, _TCHAR* argv[])
         printf("Client initialized and ready.\n");
     }
 
-	drone = new ARdrone();
-	drone->connect();
-	drone->config();
+	quadri = new Quadricoptere("ARdrone1",1);
+
 	printf("ClearEmergency [y/n]");
 	char c='a';
 	scanf("%c",&c);
 	if(c=='y')
-		drone->clearEmergencySignal();
-	drone->flatTrim();
+		quadri->emergency();
 	Sleep(200);
-	drone->takeOff();
-	
-	
-	/*Sleep(6000);
-	drone->move(0,-0.1,0,0);
-	Sleep(1000);
-	drone->move(0,0.1,0,0);
-	Sleep(1000);
-	drone->land();
-	drone->disconnect();*/
-
+	quadri->takeOff();
+	Sleep(8000);
 	while(1)
 	{
+		Position* temp = new Position(
+			client->getRigidBody(1).x * 1000
+			, client->getRigidBody(1).y * 1000
+			, client->getRigidBody(1).z * 1000
+			, client->getRigidBody(1).qy * 180
+			, client->getRigidBody(1).qx * 180
+			, client->getRigidBody(1).qz  * 180);
+		quadri->updatePosition(*temp);
+		Position *objectif = new Position(0,1500,0,0,0,0);
+		Position *erreur = new Position(100,100,100,5,5,5);
+		quadri->allerA(*objectif,*erreur);
+		free(temp);
+		free(objectif);
+		free(erreur);
+
 		//controle avec coque
 		/*float tangage = client->getRigidBody(2).qx;
 		float roulis = client->getRigidBody(2).qz;
@@ -81,7 +85,7 @@ int _tmain(int argc, _TCHAR* argv[])
 			drone->move(roulis,-tangage,0,0);
 		}
 		Sleep(30);*/
-		float Ycoef = 0.0004; // Y proportionnal coef
+		/*float Ycoef = 0.0004; // Y proportionnal coef
 		float objectifY = client->getRigidBody(2).y * 1000;//convert to millimeters
 		float droneY= client->getRigidBody(1).y * 1000;
 		float consigneY = (objectifY-droneY)*Ycoef;
@@ -113,7 +117,7 @@ int _tmain(int argc, _TCHAR* argv[])
 			drone->move(consigneX,consigneZ,consigneY,consigneQY);
 			//drone->move(0,0,0,consigneQY);
 			Sleep(30);
-		}
+		}*/
 		Sleep(30);
 	}
 	

@@ -2,7 +2,7 @@
 class Position
 {
 public:
-	Position(float x, float y, float z, float yaw, float pitch, float roll);
+	Position(float x=0, float y=0, float z=0, float yaw=0, float pitch=0, float roll=0);
 	float getX();
 	float getY();
 	float getZ();

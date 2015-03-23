@@ -17,3 +17,8 @@ void Robot::updateTrajectoire(ClientOptiTrack* client)
 	m_position.setPitch(rigidBody.qx);
 	m_position.setRoll(rigidBody.qz);
 }
+
+void Robot::updatePosition(Position position)
+{
+	m_position = position;
+}
