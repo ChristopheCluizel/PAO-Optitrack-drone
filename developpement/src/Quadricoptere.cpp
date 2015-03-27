@@ -12,32 +12,34 @@ Quadricoptere::Quadricoptere(string nom, int id) : Robot(nom, id) , m_drone()
 
 void Quadricoptere::allerA(Position objectif, Position erreur)
 {
-		float Ycoef = 0.0004; // Y proportionnal coef
+		float coeffDeStabilite = 1;
+
+		float Ycoef = 0.0004 * coeffDeStabilite; // Y proportionnal coef
 		float objectifY = objectif.getY();
 		float droneY= m_position.getY();
 		float consigneY = (objectifY-droneY)*Ycoef;
 
-		float Xcoef = -0.00005; // X proportionnal coef
+		float Xcoef = -0.00005 * coeffDeStabilite; // X proportionnal coef
 		float objectifX = objectif.getX();
 		float droneX= m_position.getX();
 		float consigneX = (objectifX-droneX)*Xcoef;
 
-		float Zcoef = -0.00005; // Z proportionnal coef
+		float Zcoef = -0.00005 * coeffDeStabilite; // Z proportionnal coef
 		float objectifZ = objectif.getZ();
 		float droneZ= m_position.getZ();
 		float consigneZ = (objectifZ-droneZ)*Zcoef;
 
-		float QYcoef = -0.0006; // QY proportionnal coef
+		float QYcoef = -0.004 * coeffDeStabilite; // QY proportionnal coef
 		float objectifQY = objectif.getYaw();
 		float droneQY =m_position.getYaw();
 		float consigneQY = (objectifQY-droneQY)*QYcoef;
 			
-		if(consigneX < -1) consigneX = -0.9;
-		if(consigneX > 1) consigneX = 0.9;
-		if(consigneY < -1) consigneY = -0.9;
-		if(consigneY > 1) consigneY = 0.9;
-		if(consigneZ < -1) consigneZ = -0.9;
-		if(consigneZ > 1) consigneZ = 0.9;
+		if(consigneX < -1) consigneX = -1;
+		if(consigneX > 1) consigneX = 1;
+		if(consigneY < -1) consigneY = -1;
+		if(consigneY > 1) consigneY = 1;
+		if(consigneZ < -1) consigneZ = -1;
+		if(consigneZ > 1) consigneZ = 1;
 		if(consigneQY < -1) consigneQY = -1;
 		if(consigneQY > 1) consigneQY = 1;
 
