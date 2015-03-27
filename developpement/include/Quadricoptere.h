@@ -5,7 +5,7 @@ class Quadricoptere : public Robot
 {
 public:
 	Quadricoptere(std::string nom, int id);
-	void allerA(Position position, Position erreur);
+	bool allerA(Position position, Position erreur);
 	void takeOff();
 	void land();
 	void emergency();

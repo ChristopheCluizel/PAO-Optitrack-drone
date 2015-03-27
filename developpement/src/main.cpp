@@ -70,7 +70,7 @@ int _tmain(int argc, _TCHAR* argv[])
 		quadri->updatePosition(*temp);
 		Position *objectif = new Position(0,1500,0,0,0,0);
 		Position *erreur = new Position(100,100,100,5,5,5);
-		quadri->allerA(*objectif,*erreur);
+		cout << quadri->allerA(*objectif,*erreur) <<endl;
 		free(temp);
 		free(objectif);
 		free(erreur);
