@@ -2,8 +2,8 @@
 #include <signal.h>
 #include <stdlib.h>
 #include <stdio.h>
-
-
+#include <vector>
+#include <queue>
 
 #include "stdafx.h"
 #include "ClientOptitrack.h"
@@ -57,9 +57,23 @@ int _tmain(int argc, _TCHAR* argv[])
 		quadri->emergency();
 	Sleep(200);
 	quadri->takeOff();
-	Sleep(8000);
+
+	Sleep(6000);
+
+	queue<Position*> trajectoire;
+	trajectoire.push(new Position(0,1500,0,0,0,0));
+	trajectoire.push(new Position(0,1500,1500,0,0,0));
+	trajectoire.push(new Position(1200,1500,-550,0,0,0));
+	trajectoire.push(new Position(0,1500,0,0,0,0));
+
 	while(1)
 	{
+		if(trajectoire.empty()) {
+			quadri->land();
+			Sleep(2000);
+			break;
+		}
+
 		Position* temp = new Position(
 			client->getRigidBody(1).x * 1000
 			, client->getRigidBody(1).y * 1000
@@ -68,11 +82,11 @@ int _tmain(int argc, _TCHAR* argv[])
 			, client->getRigidBody(1).qx * 180
 			, client->getRigidBody(1).qz  * 180);
 		quadri->updatePosition(*temp);
-		Position *objectif = new Position(0,1500,0,0,0,0);
+		Position *objectif = trajectoire.front();
 		Position *erreur = new Position(100,100,100,5,5,5);
-		cout << quadri->allerA(*objectif,*erreur) <<endl;
+		if(quadri->allerA(*objectif,*erreur))
+			trajectoire.pop();
 		free(temp);
-		free(objectif);
 		free(erreur);
 
 		//controle avec coque

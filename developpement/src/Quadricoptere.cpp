@@ -12,7 +12,7 @@ Quadricoptere::Quadricoptere(string nom, int id) : Robot(nom, id) , m_drone()
 
 bool Quadricoptere::allerA(Position objectif, Position erreur)
 {
-		float coeffDeStabilite = 1;
+		float coeffDeStabilite = 0.6;
 		float consigneY = 0;
 		float consigneX = 0;
 		float consigneZ = 0;
