@@ -32,12 +32,12 @@ void Quadricoptere::allerA(Position objectif, Position erreur)
 		float droneQY =m_position.getYaw();
 		float consigneQY = (objectifQY-droneQY)*QYcoef;
 			
-		if(consigneX < -1) consigneX = -1;
-		if(consigneX > 1) consigneX = 1;
-		if(consigneY < -1) consigneY = -1;
-		if(consigneY > 1) consigneY = 1;
-		if(consigneZ < -1) consigneZ = -1;
-		if(consigneZ > 1) consigneZ = 1;
+		if(consigneX < -1) consigneX = -0.9;
+		if(consigneX > 1) consigneX = 0.9;
+		if(consigneY < -1) consigneY = -0.9;
+		if(consigneY > 1) consigneY = 0.9;
+		if(consigneZ < -1) consigneZ = -0.9;
+		if(consigneZ > 1) consigneZ = 0.9;
 		if(consigneQY < -1) consigneQY = -1;
 		if(consigneQY > 1) consigneQY = 1;
 
@@ -46,7 +46,7 @@ void Quadricoptere::allerA(Position objectif, Position erreur)
 		if(consigneY > -0.01 && consigneY < 0.01) consigneY = 0;
 		if(consigneQY > -0.01 && consigneQY < 0.01) consigneQY = 0;
 
-		m_drone.move(consigneX,consigneZ,consigneY,consigneQY);
+		m_drone.move(consigneX, consigneZ, consigneY, consigneQY);
 
 		printf("\n\n axe \t objectif \t position \t consigne");
 		printf("\n X \t\t %g \t %g \t %g", objectifX, droneX, consigneX);

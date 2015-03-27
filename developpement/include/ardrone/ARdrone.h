@@ -5,7 +5,9 @@
 #include <sstream>
 #include <string>
 #include <iostream>
-#include <queue>
+
+#include "SafeQueue.h"
+//#include <queue>
 /*#include <thread>*/
 using namespace std;
  
@@ -41,7 +43,7 @@ private:
 	static DWORD senderLauncher(LPVOID*param);
 	//void navDataThread();
 
-	queue<string> messageQueue;
+	SafeQueue<string> messageQueue;
 	etat state;
 	HANDLE  sender;//,navData;
 	int s,slen,count;

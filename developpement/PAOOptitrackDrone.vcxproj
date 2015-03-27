@@ -90,6 +90,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\ardrone\ARdrone.h" />
+    <ClInclude Include="include\ardrone\SafeQueue.h" />
     <ClInclude Include="include\optitrack\ClientOptiTrack.h" />
     <ClInclude Include="include\optitrack\NatNetClient.h" />
     <ClInclude Include="include\optitrack\NatNetRepeater.h" />

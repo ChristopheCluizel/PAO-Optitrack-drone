@@ -114,10 +114,9 @@ void ARdrone::senderThread()
 {
 	while(1)
 	{
-		if(!messageQueue.empty())
+		if(!messageQueue.size()==0)
 		{
-			string cmd = messageQueue.front();
-			messageQueue.pop();
+			string cmd = messageQueue.pop();
 			if(cmd == "QUIT")
 				break;
 			char* msg = new char[cmd.length()+1];

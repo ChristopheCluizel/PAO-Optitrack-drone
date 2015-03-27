@@ -74,5 +74,8 @@
     <ClInclude Include="include\Robot.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\ardrone\SafeQueue.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

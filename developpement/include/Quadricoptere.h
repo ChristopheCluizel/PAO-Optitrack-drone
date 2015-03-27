@@ -1,7 +1,6 @@
 #pragma once
 #include "robot.h"
 #include "ARdrone.h"
-
 class Quadricoptere : public Robot
 {
 public:
