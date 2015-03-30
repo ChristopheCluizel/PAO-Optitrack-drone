@@ -5,12 +5,32 @@
 
         % ---------------- Test de vol ----------------
         \subsection{Test de vol}
-            Avant de s'aventurer à commander le drone depuis un PC, nous avons désiré savoir s'il était fonctionnel. Pour cela nous avons téléchargé l'application fournie par Parrot (la marque du drone): \url{https://itunes.apple.com/fr/app/free-flight/id373065271?mt=8} et \url{https://play.google.com/store/apps/details?id=com.parrot.freeflight&hl=fr}\\
+            Avant de s'aventurer à commander le drone depuis un PC, nous avons désiré savoir s'il était fonctionnel. Pour cela nous avons téléchargé l'application fournie par Parrot (la marque du drone): \url{https://itunes.apple.com/fr/app/free-flight/id373065271?mt=8} et \url{https://play.google.com/store/apps/details?id=com.parrot.freeflight&hl=fr}. \\
 
-            Une fois la batterie installée à bord, le drone s'allume tout seul et diffuse un réseau wifi dont le SSID ressemble à \textit{ardrone\_XXXX}. Il faut alors connecter le smartphone au réseau wifi du drone et lancer l'application téléchargée.\\
+            Une fois la batterie installée à bord, le drone s'allume tout seul et diffuse un réseau wifi dont le SSID ressemble à \textit{ardrone\_XXXX}. Il faut alors connecter le smartphone au réseau wifi du drone et lancer l'application téléchargée. \\
 
             Le drone est simple à piloter, le bouton \textit{take off} fait s'envoler le drone en mode stationnaire à 1 mètre d'altitude. Les sticks présents à l'écran permettent de l'incliner dans la direction souhaitée, de modifier son altitude, et de changer son orientation. Le bouton \textit{land} permet de le faire atterrir. Si le vol d'essai s'est déroulé sans problème, le drone est alors fonctionnel.
 
 
     % ============ Prise en main du système OptiTrack ===============
     \section{Prise en main du système OptiTrack}
+        % ---------- Prérequis --------------
+        \subsection{Prérequis}
+            Pour pouvoir à la fois se connecter au serveur du logiciel Motive et au drone, il faut tout d'abord connecter l'ordinateur sur le réseau du drone (pour cela, allumer le drone auparavant). Ensuite seulement, démarrer le logiciel Motive.
+
+        % ---------- Calibration des caméras et de l'origine --------------
+        \subsection{Calibration des caméras et de l'origine}
+            À l'ouverture du logiciel, choisir \emph{calibrer les caméras}, puis cliquer sur \emph{wanding}. Prendre l'objet qui ressemble à un râteau avec 3 petites boules au bout, puis faire de grands mouvements de balancier dans la pièce jusqu'à ce que la précision passe en ``very-high''. Appuyer sur \emph{calculate} (le calcul de calibration prend environ 5 secondes). Sauvegarder la calibration au besoin (nous conseillons de refaire la calibration à chaque utilisation du système si les caméras ne sont pas fixées définitivement). \\
+
+            Une fois la calibration des caméras effectuée, il faut paramétrer l'origine de l'espace 3D. Pour cela, placer le ``L'' à l'origine voulue dans la pièce. Cette position aura comme valeur (0, 0, 0) dans Motive. Sélectionner les 3 points du ``L'' et cliquer sur \emph{set origin}.
+
+        % ---------- Création d'un rigidbody --------------
+        \subsection{Création d'un rigidbody}
+            Une fois la calibration effectuée, il faut créer un rigidbody du drone pour pouvoir détecter sa position en temps réel. Pour cela, cliquer sur la rubrique \emph{create} dans le menu de la barre du haut. Sélectionner les marqueurs constituant le drone et cliquer sur \emph{rigidbody}, \emph{points selected}.
+
+        % ---------- Lancement du serveur --------------
+        \subsection{Lancement du serveur}
+            Pour lancer le serveur, aller dans le panel \emph{????} et cliquer sur \emph{???}. Le mot ``NET'' en bas à droite devient vert.
+
+
+
