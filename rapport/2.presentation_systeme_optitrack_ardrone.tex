@@ -1,2 +1,13 @@
 \chapter{Présentation des systèmes Optitrack et ARDrone}
-\TODO{}
+
+    % ============= Système Optitrack =============
+    \section{Système Optitrack}
+        Le système Optitrack est un système permettant de détecter des marqueurs infrarouges grâce à un nombre plus ou moins important de caméras infrarouges. Ce système est composé de caméras (au minimum 3) reliées à un hub usb lui-même relié à un ordinateur et d'un logiciel de traitement des données nommés Motive. \\
+
+        Ce logiciel permet de calibrer les caméras ensembles, de fixer l'origine du repère par rapport aux caméras, de créer des rigidbodies à partir de marqueurs infrarouges et d'obtenir la position des différents marqueurs dans l'espace (et donc des rigidbodies). \\
+
+        Le logiciel Motive peut fonctionner de façon autonome, mais également en tant que serveur couplé à une autre application. En effet, une application cliente peut se connecter à lui afin de récupérer les informations des marqueurs infrarouges et les utiliser de manière extérieure au logiciel Motive. L'architecture suit celle d'une architecture client-serveur.
+
+
+    % ============= Système ARDrone =============
+    \section{Système ARDrone}

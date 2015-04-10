@@ -1,9 +1,10 @@
 \chapter{Réalisation logicielle}
+
     % =============== API de commande de l'ARDrone ===================
     \section{API de commande de l'ARDrone}
         Étant un objet grand public, l'ARDrone bénéfice d'une communauté active. Cette communauté est à l'origine d'un certain nombre d'API de commande que ce soit en Javascript, C\#, Java ou C. Le SDK OptiTrack étant en C, nous avons recherché des API étant également codée en C afin de pouvoir fusionner facilement les deux outils.\\
 
-        Nos recherches nous ont menées au SDK de Parrot (la marque du drone), intégralement écrit en C et embarquant toutes les fonctionnalités nécessaires. Cependant, la phase de compilation de cette librairie s'est trouvée être très fastidieuse que ce soit sur Linux ou sur Windows. La raison est le nombre important de librairies tierces utilisé par le SDK du drone pour gérer les flux vidéo, les threads, ou encore les contrôleurs. Après avoir passé du temps a travaillé dessus et à tenter d'en extraire les fonctionnalités de pilotage du drone, il s'est avéré plus simple d'en écrire une nouvelle en C++, exclusivement dédiée au contrôle de l'appareil. De ce fait, nous perdons les informations fournies par le drone ( télémétrie, flux vidéo), mais gagnons en simplicité et comprenons mieux ce que nous faisons.
+        Nos recherches nous ont menées au SDK de Parrot (la marque du drone), intégralement écrit en C et embarquant toutes les fonctionnalités nécessaires. Cependant, la phase de compilation de cette librairie s'est trouvée être très fastidieuse que ce soit sur Linux ou sur Windows. La raison est le nombre important de librairies tierces utilisé par le SDK du drone pour gérer les flux vidéo, les threads, ou encore les contrôleurs. Après avoir passé du temps a travaillé dessus et à tenter d'en extraire les fonctionnalités de pilotage du drone, il s'est avéré plus simple d'en écrire une nouvelle en C++, exclusivement dédiée au contrôle de l'appareil. De ce fait, nous perdons les informations fournies par le drone (télémétrie, flux vidéo), mais gagnons en simplicité et comprenons mieux ce que nous faisons.
 
     % ------------- API réalisée -----------------
     \subsection{API réalisée}
@@ -15,5 +16,30 @@
         \end{itemize}
         L'API réalisé propose donc un objet ARDrone contrôlant un thread de communication avec le drone et plusieurs méthode simple comme \textit{takeOff()}, \textit{move()} ou \textit{land()}.
 
+
     % =============== Récupération des données 3D ===================
     \section{Récupération des données 3D}
+
+        % ----------- Client-serveur ----------------
+        \subsection{Client-serveur}
+            \TODO{Blablabla}
+
+        % ----------- Formatage des données ----------------
+        \subsection{Formatage des données}
+            \TODO{Blablabla}
+
+
+    % =============== Gestion des déplacements du drone ===================
+    \section{Gestion des déplacements du drone}
+
+        % ----------- Pilotage à l'aide de la coque ----------------
+        \subsection{Pilotage à l'aide de la coque}
+            \TODO{Blablabla}
+
+        % ----------- Trajectoire par points de passage ----------------
+        \subsection{Trajectoire par points de passage}
+            \TODO{Blablabla}
+
+        % ----------- Amélioration de l'asservissement ----------------
+        \subsection{Amélioration de l'asservissement}
+            \TODO{Blablabla}
