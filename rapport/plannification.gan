@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?><project name="plannifaction_PAO_Optitrack_drone" company="" webLink="http://" view-date="2015-01-19" view-index="0" gantt-divider-location="748" resource-divider-location="300" version="2.0" locale="fr">
+    <description/>
+    <view zooming-state="default:7" id="gantt-chart">
+        <field id="tpd3" name="Nom" width="79" order="0"/>
+        <field id="tpd4" name="Date de début" width="11" order="1"/>
+        <field id="tpd5" name="Date de fin" width="9" order="2"/>
+        <timeline><![CDATA[60,61,7,63,57,38,6,3,62,6,53,41,46,51,46,5,1,41,83,57,1,38,2,5,53,3,82,7,2,51,64]]></timeline>
+    </view>
+    <view id="resource-table">
+        <field id="0" name="Nom" width="56" order="0"/>
+        <field id="1" name="Rôle par défaut" width="43" order="1"/>
+    </view>
+    <!-- -->
+    <calendars>
+        <day-types>
+            <day-type id="0"/>
+            <day-type id="1"/>
+            <calendar id="1" name="default">
+                <default-week sun="0" mon="0" tue="0" wed="0" thu="0" fri="0" sat="0"/>
+                <only-show-weekends value="false"/>
+                <overriden-day-types/>
+                <days/>
+            </calendar>
+        </day-types>
+        <date year="2012" month="1" date="2"/>
+        <date year="2012" month="4" date="9"/>
+        <date year="2012" month="5" date="17"/>
+        <date year="2012" month="5" date="28"/>
+        <date year="2012" month="11" date="12"/>
+        <date year="2005" month="3" date="28"/>
+        <date year="" month="1" date="1"/>
+        <date year="" month="5" date="1"/>
+        <date year="" month="5" date="8"/>
+        <date year="" month="7" date="14"/>
+        <date year="" month="8" date="15"/>
+        <date year="" month="11" date="1"/>
+        <date year="" month="11" date="11"/>
+        <date year="" month="12" date="25"/>
+    </calendars>
+    <tasks empty-milestones="true">
+        <taskproperties>
+            <taskproperty id="tpd0" name="type" type="default" valuetype="icon"/>
+            <taskproperty id="tpd1" name="priority" type="default" valuetype="icon"/>
+            <taskproperty id="tpd2" name="info" type="default" valuetype="icon"/>
+            <taskproperty id="tpd3" name="name" type="default" valuetype="text"/>
+            <taskproperty id="tpd4" name="begindate" type="default" valuetype="date"/>
+            <taskproperty id="tpd5" name="enddate" type="default" valuetype="date"/>
+            <taskproperty id="tpd6" name="duration" type="default" valuetype="int"/>
+            <taskproperty id="tpd7" name="completion" type="default" valuetype="int"/>
+            <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
+            <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
+        </taskproperties>
+        <task id="1" name="Rangement salle et installation du système Optitrack" color="#8cb6ce" meeting="false" start="2015-01-27" duration="7" complete="100" expand="true">
+            <depend id="7" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="2" name="Prise en main du logiciel Motive" color="#8cb6ce" meeting="false" start="2015-01-27" duration="7" complete="100" expand="true">
+            <depend id="7" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="3" name="Calibration des caméras" color="#8cb6ce" meeting="false" start="2015-01-27" duration="7" complete="100" expand="true">
+            <depend id="7" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="5" name="Détections des marqueurs" color="#8cb6ce" meeting="false" start="2015-01-27" duration="7" complete="100" expand="true">
+            <depend id="7" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="6" name="Calcul des positions des marqueurs dans l'espace 3D" color="#8cb6ce" meeting="false" start="2015-01-27" duration="7" complete="100" expand="true">
+            <depend id="7" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="7" name="Étude du SDK camera et SDK NatNet" color="#8cb6ce" meeting="false" start="2015-02-03" duration="7" complete="100" expand="true"/>
+        <task id="38" name="Installation et test de l'API de l'ARDrone" color="#ff0033" meeting="false" start="2015-02-10" duration="7" complete="100" expand="true">
+            <depend id="53" type="2" difference="0" hardness="Strong"/>
+            <depend id="57" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="41" name="Recherche documentaire sur l'API du drone" color="#ff0033" meeting="false" start="2015-02-10" duration="7" complete="100" expand="true">
+            <depend id="53" type="2" difference="0" hardness="Strong"/>
+            <depend id="57" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="46" name="Installation de différentes API du drone pour étudier le code source" color="#ff0033" meeting="false" start="2015-02-10" duration="7" complete="100" expand="true">
+            <depend id="53" type="2" difference="0" hardness="Strong"/>
+            <depend id="57" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="49" name="Lecture de la documentation de l'API officielle de l'ARDrone" color="#ff0033" meeting="false" start="2015-02-10" duration="7" complete="100" expand="true">
+            <depend id="53" type="2" difference="0" hardness="Strong"/>
+            <depend id="57" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="51" name="Installation et test d'un client Linux pour le serveur Motive" color="#ff0033" meeting="false" start="2015-02-10" duration="7" complete="100" expand="true">
+            <depend id="53" type="2" difference="0" hardness="Strong"/>
+            <depend id="57" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="53" name="Programmation et premier test de récupération de la position du drone" color="#ff0033" meeting="false" start="2015-02-17" duration="7" complete="100" expand="true">
+            <depend id="60" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="57" name="Programmation et premier test de déplacement du drone" color="#ff0033" meeting="false" start="2015-02-17" duration="7" complete="100" expand="true">
+            <depend id="60" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="60" name="Création d'un asservissement P sur 4 axes" color="#009900" meeting="false" start="2015-02-24" duration="18" complete="100" expand="true">
+            <depend id="64" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="61" name="Amélioration des constantes" color="#009900" meeting="false" start="2015-02-24" duration="18" complete="100" expand="true"/>
+        <task id="62" name="Réglage de plusieurs rigidbodies au sein de Motive" color="#009900" meeting="false" start="2015-02-24" duration="18" complete="100" expand="true">
+            <depend id="64" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="63" name="Implémentation pour connection au serveur Motive et au drone" color="#009900" meeting="false" start="2015-02-24" duration="18" complete="100" expand="true">
+            <depend id="64" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="64" name="Implémentation du suivi de la coque par le drone" color="#009900" meeting="false" start="2015-03-14" duration="3" complete="100" expand="true"/>
+        <task id="82" name="Implémentation de la trajectoire" color="#0033cc" meeting="false" start="2015-03-17" duration="14" complete="100" expand="true"/>
+        <task id="83" name="Implémentation des points de passage avec gestion de zone autour de ce point" color="#0033cc" meeting="false" start="2015-03-17" duration="14" complete="100" expand="true"/>
+    </tasks>
+    <resources/>
+    <allocations/>
+    <vacations/>
+    <taskdisplaycolumns>
+        <displaycolumn property-id="tpd2" order="-1" width="75" visible="false"/>
+        <displaycolumn property-id="tpd7" order="-1" width="75" visible="false"/>
+        <displaycolumn property-id="tpd6" order="-1" width="75" visible="false"/>
+        <displaycolumn property-id="tpd10" order="-1" width="75" visible="false"/>
+        <displaycolumn property-id="tpd11" order="-1" width="75" visible="false"/>
+        <displaycolumn property-id="tpd1" order="-1" width="75" visible="false"/>
+        <displaycolumn property-id="tpd9" order="-1" width="75" visible="false"/>
+        <displaycolumn property-id="tpd8" order="-1" width="75" visible="false"/>
+        <displaycolumn property-id="tpd0" order="-1" width="75" visible="false"/>
+        <displaycolumn property-id="tpd3" order="0" width="592" visible="true"/>
+        <displaycolumn property-id="tpd4" order="1" width="82" visible="true"/>
+        <displaycolumn property-id="tpd5" order="2" width="70" visible="true"/>
+    </taskdisplaycolumns>
+    <previous/>
+    <roles roleset-name="Default"/>
+</project>
