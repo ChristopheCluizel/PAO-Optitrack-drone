@@ -1,65 +1,79 @@
 \chapter{Suivi de projet}
-Les comptes-rendus retracent les objectifs, les réalisations, ainsi que le temps estimé pour réaliser ces objectifs.
+	Les comptes-rendus retracent les objectifs, les réalisations, ainsi que le temps estimé pour réaliser ces objectifs.
 
-%============= Compte rendu à la date du 08/02 ==============
-\section{Compte rendu à la date du 08/02}
-L'objectif de ces premières semaines étaient de prendre en main le système Optitrack. Pour cela, plusieurs sous objectifs étaient à atteindre: ranger la ``salle drone'', installer les caméras, prendre en main le logiciel Motive, calibrer les caméras, détecter les marqueurs et obtenir leur position, étudier le SDK camera et le SDK NatNet.
+	%============= Compte rendu à la date du 08/02 ==============
+	\section{Compte rendu à la date du 08/02}
+		L'objectif de ces premières semaines étaient de prendre en main le système Optitrack. Pour cela, plusieurs sous objectifs étaient à atteindre: ranger la ``salle drone'', installer les caméras, prendre en main le logiciel Motive, calibrer les caméras, détecter les marqueurs et obtenir leur position, étudier le SDK camera et le SDK NatNet.
 
-Tâches effectuées:
-\begin{itemize}
-	\item Rangement de la salle et optimisation de l'espace;
-	\item Installation du système Optitrack;
-	\item Prise en main du logiciel Motive;
-	\item Calibration des caméras (Motive);
-	\item Détection des marqueurs (Motive);
-	\item Calcul des positions des marqueurs dans l'espace 3D\@ (Motive);
-	\item Étude du SDK camera et SDK NatNet. \\
-\end{itemize}
+		Tâches effectuées:
+		\begin{itemize}
+			\item Rangement de la salle et optimisation de l'espace;
+			\item Installation du système Optitrack;
+			\item Prise en main du logiciel Motive;
+			\item Calibration des caméras (Motive);
+			\item Détection des marqueurs (Motive);
+			\item Calcul des positions des marqueurs dans l'espace 3D\@ (Motive);
+			\item Étude du SDK camera et SDK NatNet. \\
+		\end{itemize}
 
-Temps estimé: 19h.
-
-
-%============= Compte rendu à la date du 20/02 ==============
-\section{Compte rendu à la date du 20/02}
-L'objectif principal de ces 2 semaines était de réussir à rassembler au sein d'un même code source les instructions de récupération de la position du drone provenant du serveur Motive et des instructions pour le déplacement du drone, le tout dans un environnement Windows avec le langage C++.
-
-Tâches effectuées:
-\begin{itemize}
-	\item Installation et test de l'API de l'ARDrone;
-	\item Recherche documentaire sur l'API du drone;
-	\item Installation de différentes API du drone pour étudier le code source;
-	\item Lecture de la documentation de l'API officielle de l'ARDrone;
-	\item Installation et test d'un client Linux pour le serveur Motive;
-	\item Programmation et premier test de récupération de la position du drone;
-	\item Programmation et premier test de déplacement du drone. \\
-\end{itemize}
-
-Temps estimé: 13h.
+		Temps estimé: 19h.
 
 
-%============= Compte rendu à la date du 16/03 ==============
-\section{Compte rendu à la date du 16/03}
-L'objectif principal de cette période était de parvenir à créer un premier asservissement et à contrôler le drone à l'aide d'une autre coque de drone. Des marqueurs infrarouges sont placés sur cette coque afin de créer un rigidbody. À partir de celui-ci, le drone suit exactement la position de la coque sur tous les axes excepté un seul pour éviter que le drone ne nous fonce dessus.
+	%============= Compte rendu à la date du 20/02 ==============
+	\section{Compte rendu à la date du 20/02}
+		L'objectif principal de ces 2 semaines était de réussir à rassembler au sein d'un même code source les instructions de récupération de la position du drone provenant du serveur Motive et des instructions pour le déplacement du drone, le tout dans un environnement Windows avec le langage C++.
 
-Tâches effectuées:
-\begin{itemize}
-	\item Création d'un asservissement P sur 4 axes (x, y, z, yaw);
-	\item Amélioration des constantes;
-	\item Réglage de plusieurs rigidbodies au sein du logiciel Motive;
-	\item Réglage du programme pour que celui-ci puisse à la fois se connecter au serveur Motive et au drone;
-	\item Programmation du suivi de la coque par le drone. \\
-\end{itemize}
+		Tâches effectuées:
+		\begin{itemize}
+			\item Installation et test de l'API de l'ARDrone;
+			\item Recherche documentaire sur l'API du drone;
+			\item Installation de différentes API du drone pour étudier le code source;
+			\item Lecture de la documentation de l'API officielle de l'ARDrone;
+			\item Installation et test d'un client Linux pour le serveur Motive;
+			\item Programmation et premier test de récupération de la position du drone;
+			\item Programmation et premier test de déplacement du drone. \\
+		\end{itemize}
 
-Temps estimé: 9h.
+		Temps estimé: 13h.
 
-%============= Compte rendu à la date du 30/03 ==============
-\section{Compte rendu à la date du 30/03}
-L'objectif principal de cette période était de parvenir à faire passer le drone par plusieurs points de passage et donc d'effectuer une trajectoire prévue.
 
-Tâches effectuées:
-\begin{itemize}
-	\item Implémentation de la trajectoire;
-	\item Implémentation des points de passage avec une gestion de zone autour de ce point. \\
-\end{itemize}
+	%============= Compte rendu à la date du 16/03 ==============
+	\section{Compte rendu à la date du 16/03}
+		L'objectif principal de cette période était de parvenir à créer un premier asservissement et à contrôler le drone à l'aide d'une autre coque de drone. Des marqueurs infrarouges sont placés sur cette coque afin de créer un rigidbody. À partir de celui-ci, le drone suit exactement la position de la coque sur tous les axes excepté un seul pour éviter que le drone ne nous fonce dessus.
 
-Temps estimé: 12h.
+		Tâches effectuées:
+		\begin{itemize}
+			\item Création d'un asservissement P sur 4 axes (x, y, z, yaw);
+			\item Amélioration des constantes;
+			\item Réglage de plusieurs rigidbodies au sein du logiciel Motive;
+			\item Réglage du programme pour que celui-ci puisse à la fois se connecter au serveur Motive et au drone;
+			\item Programmation du suivi de la coque par le drone. \\
+		\end{itemize}
+
+		Temps estimé: 9h.
+
+
+	%============= Compte rendu à la date du 30/03 ==============
+	\section{Compte rendu à la date du 30/03}
+		L'objectif principal de cette période était de parvenir à faire passer le drone par plusieurs points de passage et donc d'effectuer une trajectoire prévue.
+
+		Tâches effectuées:
+		\begin{itemize}
+			\item Implémentation de la trajectoire;
+			\item Implémentation des points de passage avec une gestion de zone autour de ce point. \\
+		\end{itemize}
+
+		Temps estimé: 12h.
+
+
+	%============= Compte rendu à la date du 17/04 ==============
+	\section{Compte rendu à la date du 17/04}
+		L'objectif principal de cette période était de passer d'un asservissement P à un asservissement PD. L'objectif secondaire était d'avancer la rédaction du rapport.
+
+		Tâches effectuées:
+		\begin{itemize}
+			\item Implémentation du correcteur D\@;
+			\item Avancement dans la rédaction du rapport. \\
+		\end{itemize}
+
+		Temps estimé: 12h.

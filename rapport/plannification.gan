@@ -1,14 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="plannifaction_PAO_Optitrack_drone" company="" webLink="http://" view-date="2015-01-19" view-index="0" gantt-divider-location="748" resource-divider-location="300" version="2.0" locale="fr">
+<?xml version="1.0" encoding="UTF-8"?><project name="plannifaction_PAO_Optitrack_drone" company="" webLink="http://" view-date="2015-01-26" view-index="0" gantt-divider-location="699" resource-divider-location="300" version="2.0" locale="fr">
     <description/>
     <view zooming-state="default:7" id="gantt-chart">
         <field id="tpd3" name="Nom" width="79" order="0"/>
         <field id="tpd4" name="Date de début" width="11" order="1"/>
         <field id="tpd5" name="Date de fin" width="9" order="2"/>
-        <timeline><![CDATA[60,61,7,63,57,38,6,3,62,6,53,41,46,51,46,5,1,41,83,57,1,38,2,5,53,3,82,7,2,51,64]]></timeline>
+        <timeline><![CDATA[7,6,64,57,61,62,3,5,83,63,2,51,53,84,60,82,85,46,1,38,41]]></timeline>
     </view>
     <view id="resource-table">
-        <field id="0" name="Nom" width="56" order="0"/>
-        <field id="1" name="Rôle par défaut" width="43" order="1"/>
+        <field id="0" name="Nom" width="52" order="0"/>
+        <field id="1" name="Rôle par défaut" width="47" order="1"/>
     </view>
     <!-- -->
     <calendars>
@@ -105,6 +105,8 @@
         <task id="64" name="Implémentation du suivi de la coque par le drone" color="#009900" meeting="false" start="2015-03-14" duration="3" complete="100" expand="true"/>
         <task id="82" name="Implémentation de la trajectoire" color="#0033cc" meeting="false" start="2015-03-17" duration="14" complete="100" expand="true"/>
         <task id="83" name="Implémentation des points de passage avec gestion de zone autour de ce point" color="#0033cc" meeting="false" start="2015-03-17" duration="14" complete="100" expand="true"/>
+        <task id="84" name="Implémentation du correcteur D" color="#ffcc00" meeting="false" start="2015-03-31" duration="18" complete="40" expand="true"/>
+        <task id="85" name="Avancement dans la rédaction du rapport" color="#ffcc00" meeting="false" start="2015-03-31" duration="18" complete="40" expand="true"/>
     </tasks>
     <resources/>
     <allocations/>
@@ -119,9 +121,9 @@
         <displaycolumn property-id="tpd9" order="-1" width="75" visible="false"/>
         <displaycolumn property-id="tpd8" order="-1" width="75" visible="false"/>
         <displaycolumn property-id="tpd0" order="-1" width="75" visible="false"/>
-        <displaycolumn property-id="tpd3" order="0" width="592" visible="true"/>
-        <displaycolumn property-id="tpd4" order="1" width="82" visible="true"/>
-        <displaycolumn property-id="tpd5" order="2" width="70" visible="true"/>
+        <displaycolumn property-id="tpd3" order="0" width="552" visible="true"/>
+        <displaycolumn property-id="tpd4" order="1" width="77" visible="true"/>
+        <displaycolumn property-id="tpd5" order="2" width="66" visible="true"/>
     </taskdisplaycolumns>
     <previous/>
     <roles roleset-name="Default"/>
