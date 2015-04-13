@@ -62,10 +62,7 @@ int _tmain(int argc, _TCHAR* argv[])
 
 	queue<Position*> trajectoire;
 	trajectoire.push(new Position(0,1500,0,0,0,0));
-	trajectoire.push(new Position(0,1500,1500,0,0,0));
-	trajectoire.push(new Position(1200,1500,-550,0,0,0));
-	trajectoire.push(new Position(0,1500,0,0,0,0));
-
+	bool isNewObjectif=true;
 	while(1)
 	{
 		if(trajectoire.empty()) {
@@ -83,9 +80,15 @@ int _tmain(int argc, _TCHAR* argv[])
 			, client->getRigidBody(1).qz  * 180);
 		quadri->updatePosition(*temp);
 		Position *objectif = trajectoire.front();
-		Position *erreur = new Position(100,100,100,5,5,5);
-		if(quadri->allerA(*objectif,*erreur))
-			trajectoire.pop();
+		Position *erreur = new Position(30,30,30,5,5,5);
+		if(quadri->allerA(*objectif,*erreur,isNewObjectif)){
+			//////////////////////////////////trajectoire.pop();
+			isNewObjectif=true;
+		}
+		else
+		{
+			isNewObjectif=false;
+		}
 		free(temp);
 		free(erreur);
 
