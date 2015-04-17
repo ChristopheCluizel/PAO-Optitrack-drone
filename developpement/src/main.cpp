@@ -62,9 +62,13 @@ int _tmain(int argc, _TCHAR* argv[])
 
 	queue<Position*> trajectoire;
 	trajectoire.push(new Position(0,1500,0,0,0,0));
-	trajectoire.push(new Position(1000,1500,1500,0,0,0));
-	trajectoire.push(new Position(2500,1500,-1500,0,0,0));
-	trajectoire.push(new Position(0,1500,0,0,0,0));
+	trajectoire.push(new Position(-3500,3500,0,0,0,0));
+	trajectoire.push(new Position(0,3500,1500,0,0,0));
+	trajectoire.push(new Position(3500,3500,0,0,0,0));
+	trajectoire.push(new Position(1700,1000,-1500,0,0,0));
+	trajectoire.push(new Position(-1500,700,-1500,0,0,0));
+	trajectoire.push(new Position(0,400,-1500,0,0,0));
+	trajectoire.push(new Position(0,400,0,0,0,0));
 
 	bool isNewObjectif=true;
 	while(1)
@@ -84,7 +88,7 @@ int _tmain(int argc, _TCHAR* argv[])
 			, client->getRigidBody(1).qz  * 180);
 		quadri->updatePosition(*temp);
 		Position *objectif = trajectoire.front();
-		Position *erreur = new Position(200,200,200,5,5,5);
+		Position *erreur = new Position(400,400,400,5,5,5);
 		if(quadri->allerA(*objectif,*erreur,isNewObjectif)){
 			trajectoire.pop();
 			isNewObjectif=true;
@@ -96,7 +100,7 @@ int _tmain(int argc, _TCHAR* argv[])
 		free(temp);
 		free(erreur);
 
-		cout << endl << "########################### " << 4 - trajectoire.size() << "/" << 4 << endl;
+		cout << endl << "########################### " << 7 - trajectoire.size() << "/" << 7 << endl;
 
 		//controle avec coque
 		/*float tangage = client->getRigidBody(2).qx;

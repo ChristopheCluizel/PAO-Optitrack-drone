@@ -55,7 +55,7 @@ bool Quadricoptere::allerA(Position objectif, Position erreur, bool isNewObjecti
 		float consigneQY = 0;
 
 		/* ============  Y  ============= */
-		float YP = 0.00005*coeffDeStabilite; // Y proportionnal coef for P
+		float YP = 0.00007*coeffDeStabilite; // Y proportionnal coef for P
 		float YI = -0.00000*coeffDeStabilite; // Y proportionnal coef for I
 		float YD = -0.00002*coeffDeStabilite; // Y proportionnal coef for D
 		float objectifY = objectif.getY();
@@ -71,7 +71,7 @@ bool Quadricoptere::allerA(Position objectif, Position erreur, bool isNewObjecti
 		printf("\nConsigne -> %g",consigneY);
 
 		/* ============  X  ============= */
-		float XP = -0.00004*coeffDeStabilite; // X proportionnal coef for P
+		float XP = -0.00005*coeffDeStabilite; // X proportionnal coef for P
 		float XI = 0.0000001*coeffDeStabilite; // X proportionnal coef for I
 		float XD = -0.00002*coeffDeStabilite; // X proportionnal coef for D
 		float objectifX = objectif.getX();
@@ -87,7 +87,7 @@ bool Quadricoptere::allerA(Position objectif, Position erreur, bool isNewObjecti
 		printf("\nConsigne -> %g",consigneX);*/
 
 		/* ============  Z  ============= */
-		float ZP = -0.00004*coeffDeStabilite; // Z proportionnal coef for P
+		float ZP = -0.00005*coeffDeStabilite; // Z proportionnal coef for P
 		float ZI = 0.0000001*coeffDeStabilite; // Z proportionnal coef for I
 		float ZD = -0.000015*coeffDeStabilite; // Z proportionnal coef for D
 		float objectifZ = objectif.getZ();
