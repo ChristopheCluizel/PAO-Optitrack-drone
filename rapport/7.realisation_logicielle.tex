@@ -22,24 +22,27 @@
 
         % ----------- Client-serveur ----------------
         \subsection{Client-serveur}
-            \TODO{Blablabla}
-
-        % ----------- Formatage des données ----------------
-        \subsection{Formatage des données}
-            \TODO{Blablabla}
-
+            Le système mis en place n'est pas simple à appréhender puisqu'il nécessite l'utilisation d'un client-serveur au sein du même PC. Le diagramme suivant permet de mieux comprendre.
+            
+           \begin{figure}[h]
+		\includegraphics[width=13cm]{images/diagramme_Composant.png}
+	 	\caption{Organisation du système}
+	 \end{figure}
+	 La communication entre Optitrack et notre programme est assurée par la librairie NatNet disponible dans le SDK Optitrack. Les informations envoyées par Motive sont par exemple le nombre de RigidBody ainsi que leur position/orientation dans l'espace.\newpage
 
     % =============== Gestion des déplacements du drone ===================
     \section{Gestion des déplacements du drone}
 
         % ----------- Pilotage à l'aide de la coque ----------------
         \subsection{Pilotage à l'aide de la coque}
-            \TODO{Blablabla}
+           La première fonction mise en œuvre durant ce PAO a été le pilotage du drone à l'aide d'une seconde coque de drone. Aucun asservissement nécessaire, nous demandions simplement au drone de se pencher dans le même sens que la coque de commande. Nous n'avions donc pas de contrôle sur l'altitude à ce moment.
+           
+           Une fois la commande du drone finalisé, nous avons pu implémenter un correcteur P (proportionnel) sur les deux axes horizontaux, sur le lacet, et sur l'axe vertical. Ainsi lorsque nous placions la coque de commande à un endroit dans la pièce, le drone s'y rendait. Le correcteur P seul étant peut performant, le drone avait des difficultés à stabiliser sa position.
 
         % ----------- Trajectoire par points de passage ----------------
         \subsection{Trajectoire par points de passage}
-            \TODO{Blablabla}
+Une fois l'asservissement en position implémenté grâce à la coque de contrôle, nous avons été en mesure d'enregistrer plusieurs positions successives dans l'espace. Ainsi, le drone a pu effectuer des trajectoires passant par ces positions pré-enregistrées. Pour que le drone ne tente pas indéfiniment d'atteindre une position précise, nous avons intégré une zone d'erreur de quelques cm afin de considérer la position comme atteinte.
 
         % ----------- Amélioration de l'asservissement ----------------
         \subsection{Amélioration de l'asservissement}
-            \TODO{Blablabla}
+Le correcteur P seul entrainant beaucoup d'instabilités, nous avons décidé d'implémenter un correcteur PID (Proportionnel, Intégrateur, Dérivé) complet sur chaque axe. Nous nous sommes tout d'abord heurtés à l'implémentation de ces derniers dans un contexte discret, puis au choix des constantes. Au final, nous avons décidé de n'utiliser que les corrections P et D car notre drone ne possédait pas d'erreur statique. Les valeurs des constantes P et D on été déterminées expérimentalement.
