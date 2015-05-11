@@ -16,21 +16,21 @@
     \section{Prise en main du système OptiTrack}
         % ---------- Prérequis --------------
         \subsection{Prérequis}
-            Pour pouvoir à la fois se connecter au serveur du logiciel Motive et au drone, il faut tout d'abord connecter l'ordinateur sur le réseau du drone (pour cela, allumer le drone auparavant). Ensuite seulement, démarrer le logiciel Motive.
+            Pour pouvoir à la fois se connecter au serveur du logiciel Motive et au drone, il faut tout d'abord connecter l'ordinateur sur le réseau du drone. Pour cela, brancher la batterie au drone. Le drone s'allume tout seul et diffuse un réseau wifi dont le SSID ressemble à \textit{ardrone\_XXXX}. Ensuite seulement, démarrer le logiciel Motive.
 
         % ---------- Calibration des caméras et de l'origine --------------
         \subsection{Calibration des caméras et de l'origine}
-            À l'ouverture du logiciel, choisir \emph{calibrer les caméras}, puis cliquer sur \emph{wanding}. Prendre l'objet qui ressemble à un râteau avec 3 petites boules au bout, puis faire de grands mouvements de balancier dans la pièce jusqu'à ce que la précision passe en ``very-high''. Appuyer sur \emph{calculate} (le calcul de calibration prend environ 5 secondes). Sauvegarder la calibration au besoin (nous conseillons de refaire la calibration à chaque utilisation du système si les caméras ne sont pas fixées définitivement). \\
+            Brancher la clé d'activation USB à l'ordinateur (celle-ci est la licence de Motive). Ensuite, brancher les caméras au hub USB, le hub sur le secteur et à l'ordinateur. À l'ouverture du logiciel, choisir \emph{perform camera calibration}, puis cliquer sur \emph{start wanding} en haut à droite. Cliquer sur \emph{continue} si un warning s'affiche. Prendre l'objet qui ressemble à un râteau avec 3 petites boules au bout, puis faire de grands mouvements de balancier dans la pièce jusqu'à ce que la précision passe en ``very-high''. Appuyer sur \emph{calculate} (le calcul de calibration prend environ 5 secondes). \\
 
-            Une fois la calibration des caméras effectuée, il faut paramétrer l'origine de l'espace 3D. Pour cela, placer le ``L'' à l'origine voulue dans la pièce. Cette position aura comme valeur (0, 0, 0) dans Motive. Sélectionner les 3 points du ``L'' et cliquer sur \emph{set origin}.
+            Une fois la calibration des caméras effectuée, il faut paramétrer l'origine de l'espace 3D. Pour cela, placer le ``L'' (le repère) à l'origine voulue dans la pièce (nous avons choisi l'axe Z orienté vers le tableau). Cette position aura comme valeur (0, 0, 0) dans Motive. Sélectionner les 3 points du ``L'' et cliquer sur \emph{set ground plane} en haut à droite. Sauvegarder la calibration au besoin (nous conseillons de refaire la calibration à chaque utilisation du système si les caméras ne sont pas fixées définitivement).
 
         % ---------- Création d'un rigidbody --------------
         \subsection{Création d'un rigidbody}
-            Une fois la calibration effectuée, il faut créer un rigidbody du drone pour pouvoir détecter sa position en temps réel. Pour cela, cliquer sur la rubrique \emph{create} dans le menu de la barre du haut. Sélectionner les marqueurs constituant le drone et cliquer sur \emph{rigidbody}, \emph{points selected}.
+            Une fois la calibration effectuée, il faut créer un rigidbody du drone pour pouvoir détecter sa position en temps réel. Pour cela, cliquer sur la rubrique \emph{layout} dans le menu de la barre du haut. Puis \emph{create}. Vous pouvez maintenant enlever le ``L'' pour positionner le drone à l'origine. Sélectionner les marqueurs constituant le drone et cliquer sur \emph{create from selection}.
 
         % ---------- Lancement du serveur --------------
         \subsection{Lancement du serveur}
-            Pour lancer le serveur, aller dans le panel \emph{????} et cliquer sur \emph{???}. Le mot ``NET'' en bas à droite devient vert.
+            Pour lancer le serveur, sélectionner \emph{view} dans la barre de menu et cliquer sur \emph{data streaming}. Ensuite, cocher la case \emph{broadcast frame data}. Le mot ``NET'' en bas à droite devient orange.
 
 
 

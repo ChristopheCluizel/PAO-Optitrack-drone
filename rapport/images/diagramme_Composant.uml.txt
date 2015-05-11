@@ -1,0 +1,17 @@
+@startuml
+node "Optitrack" {
+  [Camera1] --> [OptiHub] : USB
+  [Camera2] --> [OptiHub] : USB
+  [Camera3] --> [OptiHub] : USB
+  [Camera4] --> [OptiHub] : USB
+} 
+
+node "Ordinateur" {
+  [OptiHub] - [Motive] : USB
+  [client] <-- [Motive] : socket
+}
+
+node "Drone" {
+  [Drone] <-- [client] : socket
+}
+@enduml

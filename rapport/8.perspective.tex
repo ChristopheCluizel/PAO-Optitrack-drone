@@ -1,2 +1,14 @@
 \chapter{Perspectives}
-\TODO{Blablabla}
+    Nous avons réussi à prendre en main le système Optitrack afin de détecter et restituer la position et l'orientation du drone. Du plus, le drone a la capacité de suivre une trajectoire pré-enregistrée, c'est-à-dire une succession de points de passage. \\
+
+    À partir de ces réalisations, plusieurs améliorations et perspectives peuvent être envisagées.
+
+    \paragraph{Améliorations}
+    \begin{itemize}
+        \item amélioration des constantes d'asservissement pour plus de fluidité;
+        \item possibilité d'enregistrer la trajectoire de manière automatique à l'aide d'un déplacement du drone piloté par Smartphone ou d'un déplacement à la main.
+    \end{itemize}
+
+
+    \paragraph{Perspectives}
+    Il serait intéressant de pouvoir utiliser plusieurs entités à la fois, comme par exemple un ou plusieurs autres drones ou robots Qbo/Nao. En effet, cela permettrait de créer des déplacements en formation ou plus largement, des interactions entre ces entités. La détection et le positionnement dans l'espace de plusieurs ``rigidbodies'' sont directement intégrés dans le logiciel Motive. Il serait donc assez aisé d'ajouter des entités à l'application que nous avons réalisée. La gestion de plusieurs drone serait similaire à la gestion d'un seul, puisque les déplacements dans l'espace seront gérés de la même façon. Cependant, ce n'est pas le cas pour un robot tel que Qbo ou Nao. En effet, leurs degrés de liberté sont plus limités et suivre un drone demande donc une gestion des déplacements plus poussée.
