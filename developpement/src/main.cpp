@@ -62,14 +62,13 @@ int _tmain(int argc, _TCHAR* argv[])
 
 	queue<Position*> trajectoire;
 	trajectoire.push(new Position(0,1500,0,0,0,0));
-	trajectoire.push(new Position(-3500,3500,0,0,0,0));
-	trajectoire.push(new Position(0,3500,1500,0,0,0));
+	trajectoire.push(new Position(-3000,3500,0,0,0,0));
+	trajectoire.push(new Position(0,3500,1000,0,0,0));
 	trajectoire.push(new Position(3500,3500,0,0,0,0));
-	trajectoire.push(new Position(1700,1000,-1500,0,0,0));
-	trajectoire.push(new Position(-1500,700,-1500,0,0,0));
-	trajectoire.push(new Position(0,400,-1500,0,0,0));
+	trajectoire.push(new Position(1700,1000,-1000,0,0,0));
+	trajectoire.push(new Position(-1500,700,-1000,0,0,0));
+	trajectoire.push(new Position(0,400,-1000,0,0,0));
 	trajectoire.push(new Position(0,400,0,0,0,0));
-
 	bool isNewObjectif=true;
 	while(1)
 	{
@@ -100,7 +99,7 @@ int _tmain(int argc, _TCHAR* argv[])
 		free(temp);
 		free(erreur);
 
-		cout << endl << "########################### " << 7 - trajectoire.size() << "/" << 7 << endl;
+		cout << endl << "########################### reste " <<trajectoire.size() << "Points" << endl;
 
 		//controle avec coque
 		/*float tangage = client->getRigidBody(2).qx;

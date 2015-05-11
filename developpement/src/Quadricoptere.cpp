@@ -81,10 +81,6 @@ bool Quadricoptere::allerA(Position objectif, Position erreur, bool isNewObjecti
 			consigneX =   XP * (objectifX-droneX) 
 						//+ XI * errorSum.getX() 
 						+ XD * getMoyenneErreur().getX() ;
-		/*printf("\n\nXP -> %g * %g  = %g",XP,(objectifX-droneX),XP*(objectifX-droneX));
-		printf("\nXI -> %g * %g  = %g",XI,errorSum.getX(),XI*errorSum.getX());
-		printf("\nXD -> %g * %g  = %g",XD,lastError.getX(),XD*lastError.getX());
-		printf("\nConsigne -> %g",consigneX);*/
 
 		/* ============  Z  ============= */
 		float ZP = -0.00005*coeffDeStabilite; // Z proportionnal coef for P
@@ -102,9 +98,9 @@ bool Quadricoptere::allerA(Position objectif, Position erreur, bool isNewObjecti
 		printf("\nZD -> %g * %g  = %g",ZD,lastError.getZ(),ZD*lastError.getZ());
 		printf("\nConsigne -> %f",consigneZ);
 		fprintf(file,"\"%g\";\"%g\";\"%g\";\"%g\";\"%g\";\"%g\";\"%g\";\"%g\";\n"
-			,droneX - objectifX
-			,droneY - objectifY
-			,droneZ - objectifZ
+			,droneX// - objectifX
+			,droneY// - objectifY
+			,droneZ// - objectifZ
 			,ZP * (objectifZ-droneZ) * 10000
 			,ZD *  getMoyenneErreur().getZ() * 10000
 			,XP *  (objectifX-droneX) * 10000
@@ -126,22 +122,8 @@ bool Quadricoptere::allerA(Position objectif, Position erreur, bool isNewObjecti
 		if(consigneQY < -1) consigneQY = -1;
 		if(consigneQY > 1) consigneQY = 1;
 		
-		/*if(consigneX > -0.01 && consigneX < 0.01) consigneX = 0;
-		if(consigneZ > -0.01 && consigneZ < 0.01) consigneZ = 0;
-		if(consigneY > -0.01 && consigneY < 0.01) consigneY = 0;
-		if(consigneQY > -0.01 && consigneQY < 0.01) consigneQY = 0;*/
 
 		m_drone.move(consigneX, consigneZ, consigneY, consigneQY);
-
-		/*printf("\n\n axe \t objectif \t position \t consigne");
-		printf("\n X \t\t %g \t %g \t %g", objectifX, droneX, consigneX);
-		printf("\n Z \t\t %g \t %g \t %g", objectifZ, droneZ, consigneZ);
-		printf("\n Y \t\t %g \t %g \t %g", objectifY, droneY, consigneY);
-		printf("\n Yaw \t\t %g \t %g \t %g", objectifQY, droneQY, consigneQY);*/
-
-		/*printf("\n\nsin(%g) = %g",(unsigned int) droneQY,sin(droneQY/180));
-		printf("\ncos(%g) = %g",droneQY,cos(droneQY/180));
-		printf("\ntan(%g) = %g",droneQY,tan(droneQY/180));*/
 
 		fclose(file);
 		updateHistorique(lastError);
