@@ -1,6 +1,19 @@
 \chapter{Objectifs du PAO}
+\label{chap:objectifs_pao}
+
+	% ============== Objectifs finaux =============
+	\section{Objectifs finaux}
+	\label{sec:objectifs_finaux}
+		Une fois les objectifs du système Optitrack (partie~\ref{sec:objectifs_systeme_optitrack}) et de l'ARDrone (partie~\ref{sec:objectifs_ardrone}) réalisés séparément, il faut pouvoir les fusionner afin d'obtenir les objectifs finaux suivants: \\
+		\begin{itemize}
+			\item Détection et positionnement/orientation d'un drone dans l'espace 3D\@;
+			\item Programmation de déplacements et trajectoires en fonction des informations envoyées par le système Optitrack.
+		\end{itemize}
+
+
 	% ============== Objectifs du système Optitrack ==========
 	\section{Objectifs du système Optitrack}
+	\label{sec:objectifs_systeme_optitrack}
 		Le système Optitrack est fourni avec une suite de logiciels, Motive, un SDK camera et un SDK NatNet. Les objectifs sont donc les suivants: \\
 		\begin{itemize}
 			\item Installation des caméras et branchement;
@@ -16,18 +29,10 @@
 
 	% ============== Objectifs de l'ARDrone =============
 	\section{Objectifs de l'ARDrone}
+	\label{sec:objectifs_ardrone}
 		L'ARDrone est fourni avec une API officielle et un SDK\@. Les objectifs sont donc les suivants: \\
 		\begin{itemize}
 			\item Installation et prise en main du SDK\@;
-			\item Création d'un asservissement en position sur 4 axes (x, y, z, yaw);
+			\item Création d'un asservissement en position sur 4 degrés de liberté (x, y, z, yaw);
 			\item Programmation d'instructions de déplacement dans l'espace 3D\@.
-		\end{itemize}
-
-
-	% ============== Objectifs finaux =============
-	\section{Objectifs finaux}
-		Une fois les objectifs du système Optitrack et de l'ARDrone réalisés séparément, il faut pouvoir les fusionner afin d'obtenir les objectifs finaux suivants: \\
-		\begin{itemize}
-			\item Détection et positionnement/orientation d'un drone dans l'espace 3D\@;
-			\item Programmation de déplacements et trajectoires en fonction des informations envoyées par le système Optitrack.
 		\end{itemize}
