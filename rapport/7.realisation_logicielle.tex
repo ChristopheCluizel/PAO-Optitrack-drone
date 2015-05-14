@@ -44,7 +44,14 @@
 
         % ----------- Trajectoire par points de passage ----------------
         \subsection{Trajectoire par points de passage}
-            Une fois l'asservissement en position implémenté grâce à la coque de contrôle, nous avons été en mesure d'enregistrer plusieurs positions successives dans l'espace. Ainsi, le drone a pu effectuer des trajectoires passant par ces positions pré-enregistrées. Pour que le drone ne tente pas indéfiniment d'atteindre une position précise, nous avons intégré une zone d'erreur de quelques cm afin de considérer la position comme atteinte.
+            Une fois l'asservissement en position implémenté grâce à la coque de contrôle, nous avons été en mesure d'enregistrer plusieurs positions successives dans l'espace. Ainsi, le drone a pu effectuer des trajectoires passant par ces positions pré-enregistrées. Pour que le drone ne tente pas indéfiniment d'atteindre une position précise, nous avons intégré une zone d'erreur de quelques cm afin de considérer la position comme atteinte. La figure~\ref{fig:trajectoire_drone} illustre une des trajectoires effectuées.
+
+            \begin{figure}[h]
+              \centering
+              \includegraphics[height=10cm]{images/trajectoire.jpg}
+              \caption{Trajectoire du drone par points de passage}
+              \label{fig:trajectoire_drone}
+            \end{figure}
 
         % ----------- Amélioration de l'asservissement ----------------
         \subsection{Amélioration de l'asservissement}
